@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.aadil.gateway.skeleton.llm: DEBUG
+llm:
+  provider: local
+  http:
+    connect-timeout-ms: 2000
+    read-timeout-ms: 10000
+  openai:
+    base-url: https://api.openai.com/v1
+    api-key: ""
+    model: gpt-3.5-turbo
+    temperature: 0.7
+    max-tokens: 512
+    mock: true
+
+  local:
+    response-prefix: LocalModelResponse
+    preview-max-chars: 80
+    template: "%s: I received your prompt (%d chars). Prompt preview: \"%s\""
